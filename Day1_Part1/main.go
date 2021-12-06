@@ -32,24 +32,17 @@ func main() {
 	numbers := readFile("Day1Input.txt")
 	fmt.Println(len(numbers))
 
-	A := 0
-	B := 0
-
+	j := 0
 	NumberofIncrease := 0
 
 	for i := 0; i < len(numbers); i++ {
-
-		if i < len(numbers)-3 {
-			A = numbers[i] + numbers[i+1] + numbers[i+2]
-			B = numbers[i+1] + numbers[i+2] + numbers[i+3]
-
-			if B > A {
-				NumberofIncrease++
-				println("B is", B, "A is", A)
-			}
+		if j < len(numbers)-1 {
+			j++
+		}
+		if numbers[j] > numbers[i] {
+			NumberofIncrease++
 		}
 
 	}
 	println("There were", NumberofIncrease, "increases")
-
 }
